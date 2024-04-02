@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.LoginFragment">
+
+    <TextView
+        android:id="@+id/loginTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/baloo_da"
+        android:text="GURME"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Login Email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginEmail"
+        style="@style/MyTextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:startIconDrawable="@drawable/ic_mail"
+        android:hint="@string/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginEmailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Login Password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginPassword"
+        style="@style/MyTextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_pswsee"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:layout_marginTop="4dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/loginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/loginPassword"
+        />
+
+    <Button
+        android:id="@+id/loginButton"
+        style="@style/OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="@+id/loginPassword"
+        app:layout_constraintStart_toStartOf="@+id/loginPassword"
+        app:layout_constraintTop_toBottomOf="@id/forgotPassword" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
