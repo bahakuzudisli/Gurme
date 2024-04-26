@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteGray"
+    tools:context=".menudetail.MenuDetailFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/detailedToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:navigationIcon="@drawable/ic_back">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/baloo_da"
+            android:text="Menu Details"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"></TextView>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/restorant_image" />
+
+                    <TextView
+                        android:id="@+id/menuName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Menu Name"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/menuDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="150 gram hamburger eti, kaşar peyniri, marul, turşu, pastırma, susamı hambuger ekmeği"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/chooseIngredientsToRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/choose_ingredients_to_remove"
+                android:textColor="@color/grey"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chooseIngredientsToRemove">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/nestedScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="24dp">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/chipGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"> <!-- Padding eklenebilir -->
+
+
+                        </com.google.android.material.chip.ChipGroup>
+                    </androidx.core.widget.NestedScrollView>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/addNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/add_note"
+                android:textColor="@color/grey"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView3" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addNote">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/travel_summary"
+                        style="@style/TextAppearance.Material3.TitleMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="start|top"
+                        android:hint="Is there anything you want to add?"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="12dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/item_custom_count_view" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/custom_card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="40dp"
+                android:layout_weight="3"
+                android:background="?attr/selectableItemBackground"
+                android:clipToPadding="false"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="16dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cardView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cardView4">
+
+                <TextView
+                    android:id="@+id/text_view_inside_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="345 TL"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardElevation="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white">
+
+                    <Button
+                        android:id="@+id/addBasketButton"
+                        style="@style/OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Add to Basket"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/black" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/addBasketButton"
+                        app:layout_constraintEnd_toEndOf="@+id/addBasketButton"
+                        app:layout_constraintStart_toStartOf="@+id/addBasketButton"
+                        app:layout_constraintTop_toTopOf="@+id/addBasketButton" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

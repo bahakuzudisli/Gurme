@@ -8,4 +8,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="Welcome_Back">Welcome Back</string>
+    <string name="choose_ingredients_to_remove">Choose ingredients to remove</string>
+    <string name="add_note">Add note</string>
 </resources>
