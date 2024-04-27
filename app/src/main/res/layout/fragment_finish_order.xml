@@ -41,7 +41,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/cardViewFinishOrder"
+        app:layout_constraintBottom_toTopOf="@id/cardViewTotalFinishOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBar">
@@ -199,7 +199,7 @@
                         android:id="@+id/total_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
+                        android:layout_margin="3dp"
                         android:text="Total:"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -284,7 +284,7 @@
     </ScrollView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewFinishOrder"
+        android:id="@+id/cardViewTotalFinishOrder"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="bottom"
@@ -301,7 +301,7 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/total_text2"
+                android:id="@+id/total_text_finish_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
@@ -312,26 +312,26 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/total_price"
+                android:id="@+id/total_price_finish_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100.00 TL"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/total_text2"
-                app:layout_constraintTop_toBottomOf="@id/total_text2" />
+                app:layout_constraintStart_toStartOf="@id/total_text_finish_order"
+                app:layout_constraintTop_toBottomOf="@id/total_text_finish_order" />
 
             <Button
-                android:id="@+id/confirm_cart"
+                android:id="@+id/confirm_cart_finish_order"
                 style="@style/FilledButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="confirm cart"
-                app:layout_constraintBottom_toBottomOf="total_price"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/total_price"
-                app:layout_constraintTop_toTopOf="total_text2"
+                app:layout_constraintStart_toEndOf="@id/total_price_finish_order"
+                app:layout_constraintTop_toTopOf="parent"
                 />
 
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/menu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cheese Burger"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/menu_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="Cheese Burger with extra cheese and extra ketchup"
+        android:layout_marginTop="5dp"
+        android:textSize="16sp"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toStartOf="@id/menu_name"
+        app:layout_constraintTop_toBottomOf="@id/menu_name"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/menu_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10.00 TL"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/menu_details"
+        app:layout_constraintTop_toBottomOf="@id/menu_details" />
+
+
+    <View
+        android:id="@+id/divider31"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
