@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:padding="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/restaurant_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/restorant_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/restaurant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Burger King"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/restaurant_image"
+            app:layout_constraintTop_toTopOf="@id/restaurant_image" />
+
+        <TextView
+            android:id="@+id/restaurant_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="1234 Main St"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/restaurant_name"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_name" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_arrow_circle_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/divider"/>
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/restaurant_address"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_address"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="350.00 TL"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/totalText"
+            app:layout_constraintTop_toTopOf="@id/totalText"
+            android:layout_marginStart="5dp"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/totalText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/statusImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_check"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivered"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/statusImage"
+            app:layout_constraintTop_toTopOf="@id/statusImage"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12.12.2020"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/statusText"
+            app:layout_constraintTop_toTopOf="@id/statusText"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/menu_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="hamburger, fries, coke, salad, ice cream, coffee, tea, water, pizza, pasta, soup, dessert, cake, cookie, donut, muffin, pie, sandwich, taco, burrito, sushi, sashimi, tempura, ramen, udon, soba, curry, kebab, shawarma, falafel, hummus, baba ganoush, tabbouleh, fattoush, kibbeh, dolma, baklava, kunefe, lokma, sutlac, ayran, raki, ouzo, tsipouro, mastika, metaxa, retsina, sangria, cava, prosecco, champagne, chardonnay, sauvignon blanc, riesling, pinot grigio, merlot, cabernet sauvignon, shiraz, malbec, zinfandel, chianti, rioja, port, madeira, sherry, vermouth, gin, rum, vodka, tequila, brandy, whiskey, bourbon, scotch, absinthe, cachaca, pisco, ouzo, arak, soju, baijiu, shochu, sake, beer, ale, lager, stout, porter, pilsner, bock, lambic, cider, mead, gin and tonic, rum and coke, vodka martini, tequila sunrise, whiskey sour, bourbon on the rocks, scotch neat, absinthe drip, cachaca caipirinha, pisco sour, ouzo on the rocks, arak with water, soju bomb, baijiu shots, shochu highball, sake bomb, beer pong, ale trail, lager shandy, stout float, porterhouse steak, pilsner glass, bock beer, lambic sour, cider press, mead hall, gin joint, rum runner, vodka gimlet, tequila shot, brandy snifter, whiskey tumbler, bourbon barrel, scotch rocks, absinthe fountain, cachaca barrel, pisco still, ouzo distillery, arak vineyard, soju brewery, baijiu cellar, shochu cask, sake brewery, beer garden, ale house, lager lodge, stout house, porter pub, pilsner palace, bock barn, lambic loft, cider mill, mead manor, gin palace, rum row, vodka vault"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/statusImage"
+            app:layout_constraintTop_toBottomOf="@id/statusImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
