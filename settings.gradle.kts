@@ -15,3 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Gurme"
 include(":app")
+include(":presentation")
+include(":data")
+include(":domain")
