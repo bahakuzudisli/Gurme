@@ -1,3 +1,6 @@
+import com.kuzudisli.gurme.ConfigurationData
+import com.kuzudisli.gurme.Libs
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -5,12 +8,12 @@ plugins {
 
 android {
     namespace = "com.kuzudisli.presentation"
-    compileSdk = 34
+    compileSdk = ConfigurationData.compileSdk
 
     defaultConfig {
-        minSdk = 24
+        minSdk = ConfigurationData.minSdk
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = ConfigurationData.testInstrumentationRunner
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -24,11 +27,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = ConfigurationData.sourceCompatibility
+        targetCompatibility = ConfigurationData.targetCompatibility
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = ConfigurationData.jvmTarget
     }
     buildFeatures {
         viewBinding = true
@@ -36,18 +39,14 @@ android {
 }
 
 dependencies {
-    implementation (project(":domain"))
-    implementation("androidx.core:core-ktx:1.13.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(Libs.coreKtx)
+    implementation(Libs.appcompat)
+    implementation(Libs.material)
+    implementation(Libs.constraintLayout)
+    implementation(Libs.navigationFragmentKtx)
+    implementation(Libs.navigationUiKtx)
+    testImplementation(Libs.junit)
+    androidTestImplementation(Libs.androidJUnit)
+    androidTestImplementation(Libs.espressoCore)
 
-    // Koin core features
-    implementation ("org.koin:koin-core:3.2.0")
-
-    // Koin Android features
-    implementation ("org.koin:koin-android:3.2.0")
-    implementation ("org.koin:koin-androidx-viewmodel:3.2.0")
 }

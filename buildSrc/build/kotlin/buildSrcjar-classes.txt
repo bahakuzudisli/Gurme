@@ -1,0 +1,1 @@
+C:\Users\baha7\AndroidStudioProjects\Gurme\buildSrc\build\classes\kotlin\main\com\kuzudisli\gurme\ConfigurationData.class;C:\Users\baha7\AndroidStudioProjects\Gurme\buildSrc\build\classes\kotlin\main\com\kuzudisli\gurme\Libs.class;C:\Users\baha7\AndroidStudioProjects\Gurme\buildSrc\build\classes\kotlin\main\com\kuzudisli\gurme\Versions.class
