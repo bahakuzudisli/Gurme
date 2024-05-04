@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".orderdetail.OrderDetailFragment">
+    tools:context=".ui.orderdetail.OrderDetailFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -46,7 +46,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".orderdetail.OrderDetailFragment">
+        tools:context=".ui.orderdetail.OrderDetailFragment">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

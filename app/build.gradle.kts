@@ -59,12 +59,17 @@ dependencies {
     androidTestImplementation(Libs.androidJUnit)
     androidTestImplementation(Libs.espressoCore)
 
+    implementation(Libs.viewModel)
+    implementation(Libs.lifecycle)
+
     implementation(Libs.koinCore)
     implementation(Libs.koinAndroid)
     implementation(Libs.koinNavigation)
     implementation(Libs.koinWorkManager)
+    testImplementation(Libs.koinTest)
 
     implementation(Libs.retrofit)
+    implementation(Libs.retrofitRxJava)
     implementation(Libs.gsonConverter)
     implementation(Libs.okhttp)
     implementation(Libs.loggingInterceptor)
@@ -75,4 +80,6 @@ dependencies {
     implementation(Libs.stepView)
 
     implementation(Libs.workRuntimeKtx)
+
+    implementation (Libs.realmDB)
 }

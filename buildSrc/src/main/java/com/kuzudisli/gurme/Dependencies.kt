@@ -16,6 +16,7 @@ object Versions {
     const val stepView = "1.5.1"
     const val workRuntime = "2.9.0"
     const val realmDB = "1.11.0"
+    const val viewModelVersion = "2.7.0"
 }
 
 object Libs {
@@ -28,16 +29,22 @@ object Libs {
     const val junit = "junit:junit:${Versions.junit}"
     const val androidJUnit = "androidx.test.ext:junit:${Versions.androidJUnit}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModelVersion}"
+    const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.viewModelVersion}"
     const val koinCore = "io.insert-koin:koin-core:${Versions.koin}"
     const val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
     const val koinWorkManager = "io.insert-koin:koin-androidx-navigation:${Versions.koin}"
     const val koinNavigation = "io.insert-koin:koin-androidx-navigation:${Versions.koin}"
+    const val koinTest = "io.insert-koin:koin-test:${Versions.koin}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofitRxJava = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
     const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
-    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
-    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesAndroid =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val coroutinesCore =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val stepView = "com.github.shuhart:stepview:${Versions.stepView}"
     const val workRuntimeKtx = "androidx.work:work-runtime-ktx:${Versions.workRuntime}"
     const val realmDB = "io.realm.kotlin:library-base:${Versions.realmDB}"

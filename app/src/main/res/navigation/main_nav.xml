@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.kuzudisli.gurme.home.HomeFragment"
+        android:name="com.kuzudisli.gurme.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.kuzudisli.gurme.profile.ProfileFragment"
+        android:name="com.kuzudisli.gurme.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
-        android:name="com.kuzudisli.gurme.order.OrderFragment"
+        android:name="com.kuzudisli.gurme.ui.order.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" >
         <action
@@ -67,12 +67,12 @@
     </fragment>
     <fragment
         android:id="@+id/addAddressFragment"
-        android:name="com.kuzudisli.gurme.profile.address.AddAddressFragment"
+        android:name="com.kuzudisli.gurme.ui.profile.address.AddAddressFragment"
         android:label="fragment_add_address"
         tools:layout="@layout/fragment_add_address" />
     <fragment
         android:id="@+id/orderHistoryFragment"
-        android:name="com.kuzudisli.gurme.profile.orderhistory.OrderHistoryFragment"
+        android:name="com.kuzudisli.gurme.ui.profile.orderhistory.OrderHistoryFragment"
         android:label="fragment_order_history"
         tools:layout="@layout/fragment_order_history" >
         <action
@@ -85,12 +85,12 @@
     </fragment>
     <fragment
         android:id="@+id/profileDetailsFragment"
-        android:name="com.kuzudisli.gurme.profile.profiledetails.ProfileDetailsFragment"
+        android:name="com.kuzudisli.gurme.ui.profile.profiledetails.ProfileDetailsFragment"
         android:label="fragment_profile_details"
         tools:layout="@layout/fragment_profile_details" />
     <fragment
         android:id="@+id/finishOrderFragment"
-        android:name="com.kuzudisli.gurme.finishorder.FinishOrderFragment"
+        android:name="com.kuzudisli.gurme.ui.finishorder.FinishOrderFragment"
         android:label="fragment_finish_order"
         tools:layout="@layout/fragment_finish_order" >
         <action
@@ -103,7 +103,7 @@
     </fragment>
     <fragment
         android:id="@+id/restaurantFragment"
-        android:name="com.kuzudisli.gurme.restaurant.RestaurantFragment"
+        android:name="com.kuzudisli.gurme.ui.restaurant.RestaurantFragment"
         android:label="fragment_restaurant"
         tools:layout="@layout/fragment_restaurant" >
         <action
@@ -116,12 +116,12 @@
     </fragment>
     <fragment
         android:id="@+id/orderDetailFragment"
-        android:name="com.kuzudisli.gurme.orderdetail.OrderDetailFragment"
+        android:name="com.kuzudisli.gurme.ui.orderdetail.OrderDetailFragment"
         android:label="fragment_order_detail"
         tools:layout="@layout/fragment_order_detail" />
     <fragment
         android:id="@+id/menuDetailFragment"
-        android:name="com.kuzudisli.gurme.menudetail.MenuDetailFragment"
+        android:name="com.kuzudisli.gurme.ui.menudetail.MenuDetailFragment"
         android:label="fragment_menu_detail"
         tools:layout="@layout/fragment_menu_detail" />
 </navigation>

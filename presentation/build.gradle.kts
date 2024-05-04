@@ -49,4 +49,7 @@ dependencies {
     androidTestImplementation(Libs.androidJUnit)
     androidTestImplementation(Libs.espressoCore)
 
+    implementation(Libs.viewModel)
+    implementation(Libs.lifecycle)
+
 }

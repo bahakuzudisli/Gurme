@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/whiteGray"
-    tools:context=".menudetail.MenuDetailFragment">
+    tools:context=".ui.menudetail.MenuDetailFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/detailedToolbar"

@@ -51,7 +51,11 @@ dependencies {
     androidTestImplementation(Libs.androidJUnit)
     androidTestImplementation(Libs.espressoCore)
 
+    implementation(Libs.viewModel)
+    implementation(Libs.lifecycle)
+
     implementation(Libs.retrofit)
+    implementation(Libs.retrofitRxJava)
     implementation(Libs.gsonConverter)
     implementation(Libs.okhttp)
     implementation(Libs.loggingInterceptor)
@@ -63,7 +67,7 @@ dependencies {
     implementation(Libs.koinAndroid)
     implementation(Libs.koinNavigation)
     implementation(Libs.koinWorkManager)
-
+    testImplementation(Libs.koinTest)
     // Realm Database for Android (Kotlin) - https://realm.io/docs/java/latest
     implementation (Libs.realmDB)
     //implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0")// If using coroutines with the SDK
