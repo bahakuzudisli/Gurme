@@ -16,8 +16,8 @@ interface GurmeApi {
 
 data class LoginRequest(val email: String, val password: String)
 data class SignUpRequest(
-    val name: String,
-    val lastName: String,
+    val first_name: String,
+    val last_name: String,
     val email: String,
     val password: String
 )

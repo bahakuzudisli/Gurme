@@ -1,5 +1,6 @@
 package com.kuzudisli.gurme.ui.auth.signup
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -10,8 +11,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.kuzudisli.domain.model.SignUpResult
+import com.kuzudisli.gurme.MainActivity
 import com.kuzudisli.gurme.R
 import com.kuzudisli.gurme.databinding.FragmentSignUpBinding
 import com.kuzudisli.gurme.utils.NavigationUtils
@@ -25,7 +28,7 @@ class SignUpFragment : Fragment() {
 
     private lateinit var email: EditText
     private lateinit var password: EditText
-    private lateinit var loginButton: Button
+    private lateinit var signUpButton: Button
     private lateinit var haveAnAccountText: TextView
     private lateinit var name: EditText
     private lateinit var surname: EditText
@@ -47,13 +50,17 @@ class SignUpFragment : Fragment() {
     private fun initUI() {
         email = binding.signUpEmailEditText
         password = binding.signUpPasswordEditText
-        loginButton = binding.signUpButton
+        signUpButton = binding.signUpButton
         haveAnAccountText = binding.forgotPassword
         name = binding.signUpNameEditText
         surname = binding.signUpLastNameEditText
 
         haveAnAccountText.setOnClickListener {
             NavigationUtils.navigateToFragment(this, R.id.action_signUpFragment_to_loginFragment)
+        }
+
+        signUpButton.setOnClickListener {
+            viewModel.signUp(name.text.toString(), surname.text.toString(), email.text.toString(), password.text.toString())
         }
 
         val passwordEditText = binding.signUpPassword.editText
@@ -87,11 +94,13 @@ class SignUpFragment : Fragment() {
     }
 
     private fun navigateToHomePage() {
-        // Navigate to Home Fragment or Activity
+        val intent = Intent(activity, MainActivity::class.java)
+        startActivity(intent)
     }
 
-    private fun showErrorMessage(message: String) {
+    private fun showErrorMessage(error: String) {
         // Show error message
+        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }
 
 }
