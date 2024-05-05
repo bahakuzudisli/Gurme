@@ -12,7 +12,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.kuzudisli.domain.model.LoginResult
 import com.kuzudisli.gurme.MainActivity
 import com.kuzudisli.gurme.R

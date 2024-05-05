@@ -3,7 +3,6 @@ package com.kuzudisli.data.remote.repository
 import com.kuzudisli.data.remote.datasource.user.UserDataSource
 import com.kuzudisli.domain.model.LoginResult
 import com.kuzudisli.domain.model.SignUpResult
-import com.kuzudisli.domain.model.User
 import com.kuzudisli.domain.repos.UserRepository
 
 class UserRepositoryImpl(private val userDataSource: UserDataSource) : UserRepository {

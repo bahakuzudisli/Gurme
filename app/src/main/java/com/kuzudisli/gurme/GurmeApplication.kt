@@ -1,9 +1,6 @@
 package com.kuzudisli.gurme
 
 import android.app.Application
-import com.kuzudisli.data.di.dataModule
-import com.kuzudisli.data.di.networkModule
-import com.kuzudisli.gurme.di.appModule
 import com.kuzudisli.gurme.di.myModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

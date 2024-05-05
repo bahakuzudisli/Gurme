@@ -12,6 +12,8 @@ class UserDataSourceImpl(private val gurmeApi: GurmeApi): UserDataSource {
         try {
             val response = gurmeApi.login(LoginRequest(email, password))
             if (response.isSuccessful && response.body() != null) {
+                val result = response.body()!!
+                Log.d("Spring", "Login Success: ${result.last_name + " " + result.first_name + " " + result.email + " " + result.id}")
                 return LoginResult.Success(response.body()!!)
             } else {
                 Log.d("Spring", "Login Failed: ${response}")

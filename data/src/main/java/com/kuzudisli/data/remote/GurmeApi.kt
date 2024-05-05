@@ -7,10 +7,10 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface GurmeApi {
-    @POST("login")
+    @POST("users/signin")
     suspend fun login(@Body credentials: LoginRequest): Response<User>
 
-    @POST("signup")
+    @POST("users")
     suspend fun signUp(@Body signUpRequest: SignUpRequest): Response<User>
 }
 

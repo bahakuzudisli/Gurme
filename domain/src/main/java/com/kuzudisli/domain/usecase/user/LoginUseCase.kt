@@ -1,7 +1,8 @@
-package com.kuzudisli.domain.usecase
+package com.kuzudisli.domain.usecase.user
 
 import com.kuzudisli.domain.model.LoginResult
 import com.kuzudisli.domain.repos.UserRepository
+import com.kuzudisli.domain.usecase.UseCase
 
 class LoginUseCase(private val userRepository: UserRepository) : UseCase<LoginParams, LoginResult> {
     override suspend fun invoke(params: LoginParams): LoginResult {

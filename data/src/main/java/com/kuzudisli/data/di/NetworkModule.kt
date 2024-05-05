@@ -2,11 +2,6 @@ package com.kuzudisli.data.di
 
 import android.util.Config.DEBUG
 import com.kuzudisli.data.remote.GurmeApi
-import com.kuzudisli.data.remote.datasource.user.UserDataSource
-import com.kuzudisli.data.remote.datasource.user.UserDataSourceImpl
-import com.kuzudisli.data.remote.repository.UserRepositoryImpl
-import com.kuzudisli.domain.repos.UserRepository
-import com.kuzudisli.domain.usecase.LoginUseCase
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -18,7 +13,7 @@ import java.util.concurrent.TimeUnit
 
 val connectTimeout: Long = 40// 20s
 val readTimeout: Long = 40 // 20s
-val BASE_URL = "http://10.0.2.2:8080"
+val BASE_URL = "http://10.0.2.2:8080/gurmeapp/api/"
 
 fun provideHttpClient(): OkHttpClient {
     val okHttpClientBuilder = OkHttpClient.Builder()

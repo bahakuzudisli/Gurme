@@ -2,10 +2,10 @@ package com.kuzudisli.domain.model
 
 data class User(
     val id: Int,
-    val name: String,
-    val lastName: String,
-    val phoneNumber: String,
-    val address: String,
+    val first_name: String,
+    val last_name: String,
+    val phone_number: String? = null,
+    val address: String? = null,
     val email: String,
     val password: String
 )
