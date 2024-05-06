@@ -4,6 +4,7 @@ import com.kuzudisli.gurme.Libs
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id ("io.realm.kotlin")
 }
 
 android {
@@ -49,5 +50,7 @@ dependencies {
 
     implementation(Libs.viewModel)
     implementation(Libs.lifecycle)
+    implementation (Libs.realmDB)
+    implementation(Libs.workRuntimeKtx)
 
 }

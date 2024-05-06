@@ -6,6 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
+    id ("io.realm.kotlin")
 }
 
 android {
@@ -65,7 +66,7 @@ dependencies {
     implementation(Libs.koinCore)
     implementation(Libs.koinAndroid)
     implementation(Libs.koinNavigation)
-    implementation(Libs.koinWorkManager)
+    implementation(Libs.koinWorkManagerr)
     testImplementation(Libs.koinTest)
 
     implementation(Libs.retrofit)

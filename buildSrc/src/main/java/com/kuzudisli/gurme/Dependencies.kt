@@ -33,7 +33,7 @@ object Libs {
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.viewModelVersion}"
     const val koinCore = "io.insert-koin:koin-core:${Versions.koin}"
     const val koinAndroid = "io.insert-koin:koin-android:${Versions.koin}"
-    const val koinWorkManager = "io.insert-koin:koin-androidx-navigation:${Versions.koin}"
+    const val koinWorkManagerr = "io.insert-koin:koin-androidx-workmanager:${Versions.koin}"
     const val koinNavigation = "io.insert-koin:koin-androidx-navigation:${Versions.koin}"
     const val koinTest = "io.insert-koin:koin-test:${Versions.koin}"
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"

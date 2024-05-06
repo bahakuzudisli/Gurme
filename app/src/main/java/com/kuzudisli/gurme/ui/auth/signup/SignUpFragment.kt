@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.work.WorkInfo
 import com.kuzudisli.domain.model.SignUpResult
 import com.kuzudisli.gurme.MainActivity
 import com.kuzudisli.gurme.R
@@ -60,7 +62,12 @@ class SignUpFragment : Fragment() {
         }
 
         signUpButton.setOnClickListener {
-            viewModel.signUp(name.text.toString(), surname.text.toString(), email.text.toString(), password.text.toString())
+            viewModel.signUp(
+                name.text.toString(),
+                surname.text.toString(),
+                email.text.toString(),
+                password.text.toString()
+            )
         }
 
         val passwordEditText = binding.signUpPassword.editText
@@ -82,16 +89,19 @@ class SignUpFragment : Fragment() {
     }
 
     private fun observers() {
-        viewModel.signUpResult.observe(viewLifecycleOwner) { result ->
-            when (result) {
-                is SignUpResult.Success -> navigateToHomePage()
-                is SignUpResult.Failure -> showErrorMessage(result.error)
-                else -> {
-
+        viewModel.signUpResult.observe(viewLifecycleOwner) { workInfo ->
+            if (workInfo != null && workInfo.state == WorkInfo.State.SUCCEEDED) {
+                navigateToHomePage()
+            } else if (workInfo != null) {
+                if (workInfo.state == WorkInfo.State.FAILED) {
+                    showErrorMessage("Login Failed: wrong email or password")
+                } else {
+                    showErrorMessage("Network Error")
                 }
             }
         }
     }
+
 
     private fun navigateToHomePage() {
         val intent = Intent(activity, MainActivity::class.java)

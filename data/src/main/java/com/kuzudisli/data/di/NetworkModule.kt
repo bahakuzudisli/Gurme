@@ -25,7 +25,6 @@ fun provideHttpClient(): OkHttpClient {
         }
         okHttpClientBuilder.addInterceptor(httpLoggingInterceptor)
     }
-    okHttpClientBuilder.build()
     return okHttpClientBuilder.build()
 }
 

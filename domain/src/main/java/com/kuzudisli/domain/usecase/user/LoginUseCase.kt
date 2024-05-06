@@ -1,11 +1,12 @@
 package com.kuzudisli.domain.usecase.user
 
-import com.kuzudisli.domain.model.LoginResult
+import androidx.lifecycle.LiveData
 import com.kuzudisli.domain.repos.UserRepository
 import com.kuzudisli.domain.usecase.UseCase
+import androidx.work.WorkInfo
 
-class LoginUseCase(private val userRepository: UserRepository) : UseCase<LoginParams, LoginResult> {
-    override suspend fun invoke(params: LoginParams): LoginResult {
+class LoginUseCase(private val userRepository: UserRepository) : UseCase<LoginParams, LiveData<WorkInfo>> {
+    override suspend fun invoke(params: LoginParams): LiveData<WorkInfo> {
         return userRepository.login(params.email, params.password)
     }
 }

@@ -12,6 +12,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.work.ListenableWorker
+import androidx.work.WorkInfo
 import com.kuzudisli.domain.model.LoginResult
 import com.kuzudisli.gurme.MainActivity
 import com.kuzudisli.gurme.R
@@ -78,13 +80,14 @@ class LoginFragment : Fragment() {
     }
 
     private fun observers() {
-        viewModel.loginResult.observe(viewLifecycleOwner) { result ->
-            when (result) {
-                is LoginResult.Success -> navigateToHomePage()
-                is LoginResult.Failure -> showErrorMessage(result.error)
-                else -> {
-
-                }
+        viewModel.loginResult.observe(viewLifecycleOwner){ workInfo ->
+            if (workInfo != null && workInfo.state == WorkInfo.State.SUCCEEDED) {
+                // Login işlemi başarılı
+                // UI'ı güncelle veya başka bir aktiviteye geç
+                navigateToHomePage()
+            } else if (workInfo.state == WorkInfo.State.FAILED) {
+                // Hata yönetimi
+                showErrorMessage("Login Failed")
             }
         }
     }

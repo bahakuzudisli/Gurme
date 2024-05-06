@@ -66,7 +66,7 @@ dependencies {
     implementation(Libs.koinCore)
     implementation(Libs.koinAndroid)
     implementation(Libs.koinNavigation)
-    implementation(Libs.koinWorkManager)
+    implementation(Libs.koinWorkManagerr)
     testImplementation(Libs.koinTest)
     // Realm Database for Android (Kotlin) - https://realm.io/docs/java/latest
     implementation (Libs.realmDB)

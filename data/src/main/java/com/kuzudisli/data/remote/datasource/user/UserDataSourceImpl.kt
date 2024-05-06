@@ -6,35 +6,38 @@ import com.kuzudisli.data.remote.LoginRequest
 import com.kuzudisli.data.remote.SignUpRequest
 import com.kuzudisli.domain.model.LoginResult
 import com.kuzudisli.domain.model.SignUpResult
+import com.kuzudisli.domain.model.User
 
-class UserDataSourceImpl(private val gurmeApi: GurmeApi): UserDataSource {
+class UserDataSourceImpl(private val gurmeApi: GurmeApi) : UserDataSource {
     override suspend fun login(email: String, password: String): LoginResult {
-        try {
+        return try {
             val response = gurmeApi.login(LoginRequest(email, password))
             if (response.isSuccessful && response.body() != null) {
-                val result = response.body()!!
-                Log.d("Spring", "Login Success: ${result.last_name + " " + result.first_name + " " + result.email + " " + result.id}")
-                return LoginResult.Success(response.body()!!)
+                LoginResult.Success(response.body()!!)
             } else {
-                Log.d("Spring", "Login Failed: ${response}")
-                return LoginResult.Failure("Login Failed: ${response.message()}")
+                LoginResult.Failure("Login Failed: ${response.message()}")
             }
         } catch (e: Exception) {
-            Log.d("Spring", "Network error: ${e.message}")
-            return LoginResult.Failure("Network Error: ${e.message}")
+            LoginResult.Failure("Network Error: ${e.message}")
         }
     }
 
-    override suspend fun signUp(name: String, lastName: String, email: String, password: String): SignUpResult {
-        try {
+    override suspend fun signUp(
+        name: String,
+        lastName: String,
+        email: String,
+        password: String
+    ): SignUpResult {
+        return try {
             val response = gurmeApi.signUp(SignUpRequest(name, lastName, email, password))
+
             if (response.isSuccessful && response.body() != null) {
-                return SignUpResult.Success(response.body()!!)
+                SignUpResult.Success(response.body()!!)
             } else {
-                return SignUpResult.Failure("Sign Up Failed: ${response.message()}")
+                SignUpResult.Failure("Sign Up Failed: ${response.code()}")
             }
         } catch (e: Exception) {
-            return SignUpResult.Failure("Network Error: ${e.message}")
+            SignUpResult.Failure("Network Error: ${e.message}")
         }
     }
 }
