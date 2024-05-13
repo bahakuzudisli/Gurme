@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.login.LoginFragment">
+    tools:context=".ui.auth.user.login.LoginFragment">
 
     <TextView
         android:id="@+id/loginTitle"
@@ -68,7 +68,7 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forgot_password"
+        android:text="Don't have an account?"
         android:layout_marginTop="4dp"
         android:textSize="20sp"
         android:textStyle="bold"

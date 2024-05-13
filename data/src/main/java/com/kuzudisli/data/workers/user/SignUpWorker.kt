@@ -3,11 +3,9 @@ package com.kuzudisli.data.workers.user
 import android.content.Context
 import android.util.Log
 import androidx.work.CoroutineWorker
-import androidx.work.ListenableWorker
 import androidx.work.WorkerParameters
-import com.kuzudisli.data.remote.datasource.user.UserDataSource
+import com.kuzudisli.domain.datasource.remote.UserDataSource
 import com.kuzudisli.domain.model.SignUpResult
-import com.kuzudisli.domain.model.User
 
 class SignUpWorker(
     context: Context,

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525415788002",
+    "project_id": "gurme-1c7d3",
+    "storage_bucket": "gurme-1c7d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525415788002:android:990cab9d211b56df441dbb",
+        "android_client_info": {
+          "package_name": "com.kuzudisli.gurme"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBNMucXF4em9pjY6XS1Yy_ICktrZjCJlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

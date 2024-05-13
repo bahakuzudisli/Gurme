@@ -1,4 +1,4 @@
-package com.kuzudisli.gurme.ui.auth.login
+package com.kuzudisli.gurme.ui.auth.user.login
 
 import android.util.Log
 import androidx.lifecycle.LiveData

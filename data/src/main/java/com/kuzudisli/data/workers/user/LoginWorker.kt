@@ -3,7 +3,7 @@ package com.kuzudisli.data.workers.user
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.kuzudisli.data.remote.datasource.user.UserDataSource
+import com.kuzudisli.domain.datasource.remote.UserDataSource
 import com.kuzudisli.domain.model.LoginResult
 
 class LoginWorker(

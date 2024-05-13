@@ -5,7 +5,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
-    id ("io.realm.kotlin")
+    id("io.realm.kotlin")
 }
 
 android {
@@ -42,7 +42,7 @@ android {
 
 dependencies {
 
-    implementation (project(":domain"))
+    implementation(project(":domain"))
 
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
@@ -62,13 +62,24 @@ dependencies {
 
     implementation(Libs.coroutinesAndroid)
     implementation(Libs.coroutinesCore)
+    implementation(Libs.coroutinesPlayServices)
 
     implementation(Libs.koinCore)
     implementation(Libs.koinAndroid)
     implementation(Libs.koinNavigation)
     implementation(Libs.koinWorkManagerr)
     testImplementation(Libs.koinTest)
-    // Realm Database for Android (Kotlin) - https://realm.io/docs/java/latest
-    implementation (Libs.realmDB)
-    //implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0")// If using coroutines with the SDK
+    implementation(Libs.realmDB)
+
+//    implementation (platform(Libs.firebaseBom)) // Use BoM for Firebase
+//    implementation(Libs.firebaseAuth)
+//    implementation(Libs.firebaseFirestore)
+//    implementation(Libs.firebaseStorage)
+//    implementation(Libs.firebaseMessaging)
+//    implementation(Libs.firebaseUIAuth)
+//    implementation(Libs.firebaseUIFirestore)
+    implementation(Libs.firebaseAuth)
+    implementation(Libs.firebaseFirestore)
+    implementation(Libs.firebaseStorage)
+    implementation(Libs.firebaseMessaging)
 }

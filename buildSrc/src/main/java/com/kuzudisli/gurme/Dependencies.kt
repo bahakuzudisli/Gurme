@@ -1,22 +1,26 @@
 package com.kuzudisli.gurme
 
 object Versions {
-    const val coreKtx = "1.9.0"
+    const val coreKtx = "1.12.0"
     const val appcompat = "1.6.1"
     const val material = "1.11.0"
     const val constraintLayout = "2.1.4"
-    const val navigation = "2.7.7"
+    const val navigation = "2.7.5"
     const val junit = "4.13.2"
     const val androidJUnit = "1.1.5"
     const val espresso = "3.5.1"
     const val koin = "3.5.0"
     const val retrofit = "2.9.0"
-    const val okhttp = "4.9.1"
+    const val okhttp = "5.0.0-alpha.11"
     const val coroutines = "1.5.2"
     const val stepView = "1.5.1"
     const val workRuntime = "2.9.0"
     const val realmDB = "1.11.0"
     const val viewModelVersion = "2.7.0"
+    const val glide = "4.15.1"
+    const val gms = "21.2.0"
+    // Firebase Versions
+
 }
 
 object Libs {
@@ -41,11 +45,18 @@ object Libs {
     const val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
     const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
-    const val coroutinesAndroid =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
-    const val coroutinesCore =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesPlayServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.coroutines}"
     const val stepView = "com.github.shuhart:stepview:${Versions.stepView}"
     const val workRuntimeKtx = "androidx.work:work-runtime-ktx:${Versions.workRuntime}"
     const val realmDB = "io.realm.kotlin:library-base:${Versions.realmDB}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val gms = "com.google.android.gms:play-services-location:${Versions.gms}"
+
+    // Firebase Libraries
+    const val firebaseAuth = "com.google.firebase:firebase-auth-ktx:22.3.1"
+    const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx:24.10.3"
+    const val firebaseStorage = "com.google.firebase:firebase-storage-ktx:20.3.0"
+    const val firebaseMessaging = "com.google.firebase:firebase-messaging-ktx:23.4.1"
 }

@@ -1,10 +1,10 @@
 import com.kuzudisli.gurme.ConfigurationData
 import com.kuzudisli.gurme.Libs
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id ("io.realm.kotlin")
+    id("io.realm.kotlin")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -50,7 +50,18 @@ dependencies {
 
     implementation(Libs.viewModel)
     implementation(Libs.lifecycle)
-    implementation (Libs.realmDB)
+    implementation(Libs.realmDB)
     implementation(Libs.workRuntimeKtx)
 
+//    implementation (platform(Libs.firebaseBom)) // Use BoM for Firebase
+//    implementation(Libs.firebaseAuth)
+//    implementation(Libs.firebaseFirestore)
+//    implementation(Libs.firebaseStorage)
+//    implementation(Libs.firebaseMessaging)
+//    implementation(Libs.firebaseUIAuth)
+//    implementation(Libs.firebaseUIFirestore)
+    implementation(Libs.firebaseAuth)
+    implementation(Libs.firebaseFirestore)
+    implementation(Libs.firebaseStorage)
+    implementation(Libs.firebaseMessaging)
 }
