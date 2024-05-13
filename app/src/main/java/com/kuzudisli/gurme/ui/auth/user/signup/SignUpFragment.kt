@@ -1,9 +1,11 @@
-package com.kuzudisli.gurme.ui.auth.login
+package com.kuzudisli.gurme.ui.auth.user.signup
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,34 +13,33 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.work.ListenableWorker
+import androidx.fragment.app.viewModels
 import androidx.work.WorkInfo
-import com.kuzudisli.domain.model.LoginResult
+import com.kuzudisli.domain.model.SignUpResult
 import com.kuzudisli.gurme.MainActivity
 import com.kuzudisli.gurme.R
-import com.kuzudisli.gurme.databinding.FragmentLoginBinding
+import com.kuzudisli.gurme.databinding.FragmentSignUpBinding
 import com.kuzudisli.gurme.utils.NavigationUtils
 import org.koin.android.ext.android.inject
 
-class LoginFragment : Fragment() {
+class SignUpFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-
-    val viewModel: LoginViewModel by inject()
-
+    private val viewModel: SignUpViewModel by inject()
 
     private lateinit var email: EditText
     private lateinit var password: EditText
-    private lateinit var loginButton: Button
-    private lateinit var forgotPassword: TextView
+    private lateinit var signUpButton: Button
+    private lateinit var haveAnAccountText: TextView
+    private lateinit var name: EditText
+    private lateinit var surname: EditText
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -49,48 +50,58 @@ class LoginFragment : Fragment() {
     }
 
     private fun initUI() {
-        email = binding.loginEmailEditText
-        password = binding.loginPasswordEditText
-        loginButton = binding.loginButton
-        forgotPassword = binding.forgotPassword
+        email = binding.signUpEmailEditText
+        password = binding.signUpPasswordEditText
+        signUpButton = binding.signUpButton
+        haveAnAccountText = binding.forgotPassword
+        name = binding.signUpNameEditText
+        surname = binding.signUpLastNameEditText
 
-        forgotPassword.setOnClickListener {
-            NavigationUtils.navigateToFragment(this, R.id.action_loginFragment_to_signUpFragment)
+        haveAnAccountText.setOnClickListener {
+            NavigationUtils.navigateToFragment(this, R.id.action_signUpFragment_to_loginFragment)
         }
 
-        loginButton.setOnClickListener {
-            viewModel.login(email.text.toString(), password.text.toString())
+        signUpButton.setOnClickListener {
+            viewModel.signUp(
+                name.text.toString(),
+                surname.text.toString(),
+                email.text.toString(),
+                password.text.toString()
+            )
         }
 
-        val passwordEditText = binding.loginPassword.editText
+        val passwordEditText = binding.signUpPassword.editText
         passwordEditText?.let { password ->
-            binding.loginPassword.setStartIconOnClickListener {
+            binding.signUpPassword.setStartIconOnClickListener {
                 val currentTransformationMethod = password.transformationMethod
                 password.transformationMethod =
                     if (currentTransformationMethod == PasswordTransformationMethod.getInstance()) {
-                        binding.loginPassword.setStartIconDrawable(R.drawable.ic_pswhide)
+                        binding.signUpPassword.setStartIconDrawable(R.drawable.ic_pswhide)
                         HideReturnsTransformationMethod.getInstance()
                     } else {
-                        binding.loginPassword.setStartIconDrawable(R.drawable.ic_pswsee)
+                        binding.signUpPassword.setStartIconDrawable(R.drawable.ic_pswsee)
                         PasswordTransformationMethod.getInstance()
                     }
                 password.setSelection(password.text?.length ?: 0)
             }
         }
+
     }
 
     private fun observers() {
-        viewModel.loginResult.observe(viewLifecycleOwner){ workInfo ->
+        viewModel.signUpResult.observe(viewLifecycleOwner) { workInfo ->
             if (workInfo != null && workInfo.state == WorkInfo.State.SUCCEEDED) {
-                // Login işlemi başarılı
-                // UI'ı güncelle veya başka bir aktiviteye geç
                 navigateToHomePage()
-            } else if (workInfo.state == WorkInfo.State.FAILED) {
-                // Hata yönetimi
-                showErrorMessage("Login Failed")
+            } else if (workInfo != null) {
+                if (workInfo.state == WorkInfo.State.FAILED) {
+                    showErrorMessage("Login Failed: wrong email or password")
+                } else {
+                    showErrorMessage("Network Error")
+                }
             }
         }
     }
+
 
     private fun navigateToHomePage() {
         val intent = Intent(activity, MainActivity::class.java)

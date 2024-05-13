@@ -1,4 +1,4 @@
-package com.kuzudisli.data.remote.datasource.user
+package com.kuzudisli.domain.datasource.remote
 
 import com.kuzudisli.domain.model.LoginResult
 import com.kuzudisli.domain.model.SignUpResult

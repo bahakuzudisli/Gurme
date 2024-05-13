@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
@@ -7,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/whiteGray"
     android:orientation="vertical"
-    tools:context=".ui.restaurant.RestaurantFragment">
+    tools:context=".ui.user.restaurant.RestaurantFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -40,20 +41,12 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginBottom="8dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -84,123 +77,67 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView" />
 
                 <TextView
-                    android:id="@+id/restaurant_distance"
+                    android:id="@+id/minimum_order_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="1.2 km"
-                    android:textColor="@color/grey"
+                    android:text="Minimum Order: 20 TL"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/imageView"
                     app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-                <View
-                    android:id="@+id/divider3"
-                    android:layout_width="2dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="15dp"
-                    android:background="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@id/restaurant_distance"
-                    app:layout_constraintStart_toEndOf="@id/restaurant_distance"
-                    app:layout_constraintTop_toTopOf="@+id/restaurant_distance" />
-
                 <TextView
-                    android:id="@+id/restaurant_delivery_price"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/restaurant_address_text"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:text="Delivery: 5 TL"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toEndOf="@+id/divider3"
-                    app:layout_constraintTop_toTopOf="@+id/divider3" />
-
-                <TextView
-                    android:id="@+id/minimum_order_price"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Minimum Order: 20 TL"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="@+id/restaurant_distance"
-                    app:layout_constraintTop_toBottomOf="@+id/restaurant_distance" />
-
-                <ImageView
-                    android:id="@+id/star_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_star"
-                    app:layout_constraintStart_toStartOf="@+id/minimum_order_price"
-                    app:layout_constraintTop_toBottomOf="@+id/minimum_order_price" />
-
-                <TextView
-                    android:id="@+id/restaurant_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="4.5"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@id/star_image"
-                    app:layout_constraintStart_toEndOf="@+id/star_image"
-                    app:layout_constraintTop_toTopOf="@+id/star_image" />
-
-                <ImageView
-                    android:id="@+id/time_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/ic_time"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/star_image"
-                    app:layout_constraintTop_toBottomOf="@+id/star_image" />
-
-                <TextView
-                    android:id="@+id/delivery_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="Delivery: 40 min."
-                    android:textColor="@color/black"
+                    android:layout_marginEnd="30dp"
+                    android:maxLines="3"
+                    android:text="Ankara/yenimahalle ölmezler mahallesi 3421. cd no: 12"
+                    android:textColor="@color/grey"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@id/time_image"
-                    app:layout_constraintStart_toEndOf="@+id/time_image"
-                    app:layout_constraintTop_toTopOf="@+id/time_image" />
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/minimum_order_price"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tl_merchant"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_white_fff_rounded_10dp_bottom"
-        android:overScrollMode="never"
-        app:tabIndicatorFullWidth="false"
-        android:contentDescription="tabbb"
-        app:tabMode="scrollable"
-        app:tabRippleColor="#fcbdbd"
-        app:tabTextAppearance="@style/CustomTextAppearance"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
-    <!-- Restaurant Menuleri, tab layout kısmı recyclerviewler ve textviewler... -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_restaurant"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="4dp"
-        android:overScrollMode="never"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        tools:listitem="@layout/item_product_selection"
-        tools:visibility="visible" />
+        android:background="@color/whiteGray">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:background="@color/white"
+            app:tabIndicatorColor="@color/black"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/blackTone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabMode="fixed"
+            app:tabGravity="fill" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:nestedScrollingEnabled="true"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
+            tools:listitem="@layout/item_product_selection" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

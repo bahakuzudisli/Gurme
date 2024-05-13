@@ -5,6 +5,8 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id ("io.realm.kotlin")
+    id("kotlin-parcelize")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -52,5 +54,14 @@ dependencies {
     implementation(Libs.lifecycle)
     implementation (Libs.realmDB)
     implementation(Libs.workRuntimeKtx)
+
+    implementation(platform(Libs.firebaseBoM))
+    implementation(Libs.firebaseAuth)
+    implementation(Libs.firebaseFirestore)
+    implementation(Libs.firebaseStorage)
+    implementation(Libs.firebaseMessaging)
+    implementation(Libs.firebaseMessagingOld)
+    implementation(Libs.firebaseUiFirestore)
+    implementation(Libs.firebaseUiAuth)
 
 }

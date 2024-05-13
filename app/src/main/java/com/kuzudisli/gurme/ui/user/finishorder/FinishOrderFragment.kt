@@ -1,4 +1,4 @@
-package com.kuzudisli.gurme.ui.finishorder
+package com.kuzudisli.gurme.ui.user.finishorder
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

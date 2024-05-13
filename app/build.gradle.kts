@@ -7,6 +7,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
     id ("io.realm.kotlin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -56,6 +57,11 @@ dependencies {
     implementation(Libs.constraintLayout)
     implementation(Libs.navigationFragmentKtx)
     implementation(Libs.navigationUiKtx)
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.activity:activity:1.8.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     testImplementation(Libs.junit)
     androidTestImplementation(Libs.androidJUnit)
     androidTestImplementation(Libs.espressoCore)
@@ -83,4 +89,18 @@ dependencies {
     implementation(Libs.workRuntimeKtx)
 
     implementation (Libs.realmDB)
+
+    implementation(Libs.glide)
+
+    implementation ("io.github.ahmad-hamwi:tabsync:1.0.1")
+
+    implementation(platform(Libs.firebaseBoM))
+    implementation(Libs.firebaseAuth)
+    implementation(Libs.firebaseFirestore)
+    implementation(Libs.firebaseStorage)
+    implementation(Libs.firebaseMessaging)
+    implementation(Libs.firebaseMessagingOld)
+    implementation(Libs.firebaseUiFirestore)
+    implementation(Libs.firebaseUiAuth)
+
 }

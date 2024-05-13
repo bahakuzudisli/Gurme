@@ -17,6 +17,9 @@ object Versions {
     const val workRuntime = "2.9.0"
     const val realmDB = "1.11.0"
     const val viewModelVersion = "2.7.0"
+    const val glide = "4.15.1"
+    const val firebaseBoMV = "30.2.0"
+    const val gms = "21.2.0"
 }
 
 object Libs {
@@ -45,7 +48,20 @@ object Libs {
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     const val coroutinesCore =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesPlayServices =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.coroutines}"
     const val stepView = "com.github.shuhart:stepview:${Versions.stepView}"
     const val workRuntimeKtx = "androidx.work:work-runtime-ktx:${Versions.workRuntime}"
     const val realmDB = "io.realm.kotlin:library-base:${Versions.realmDB}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val firebaseBoM = "com.google.firebase:firebase-bom:${Versions.firebaseBoMV}"
+    const val firebaseAuth = "com.google.firebase:firebase-auth"
+    const val firebaseFirestore = "com.google.firebase:firebase-firestore-ktx"
+    const val firebaseStorage = "com.google.firebase:firebase-storage-ktx"
+    const val firebaseMessaging = "com.google.firebase:firebase-messaging-ktx"
+    const val firebaseMessagingOld = "com.google.firebase:firebase-messaging"
+    const val firebaseUiFirestore = "com.firebaseui:firebase-ui-firestore"
+    const val firebaseUiAuth = "com.firebaseui:firebase-ui-auth"
+    const val gms = "com.google.android.gms:play-services-location:${Versions.gms}"
+
 }
