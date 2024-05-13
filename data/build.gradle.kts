@@ -5,7 +5,8 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
-    id("io.realm.kotlin")
+    id ("io.realm.kotlin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -42,7 +43,7 @@ android {
 
 dependencies {
 
-    implementation(project(":domain"))
+    implementation (project(":domain"))
 
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
@@ -71,13 +72,6 @@ dependencies {
     testImplementation(Libs.koinTest)
     implementation(Libs.realmDB)
 
-//    implementation (platform(Libs.firebaseBom)) // Use BoM for Firebase
-//    implementation(Libs.firebaseAuth)
-//    implementation(Libs.firebaseFirestore)
-//    implementation(Libs.firebaseStorage)
-//    implementation(Libs.firebaseMessaging)
-//    implementation(Libs.firebaseUIAuth)
-//    implementation(Libs.firebaseUIFirestore)
     implementation(Libs.firebaseAuth)
     implementation(Libs.firebaseFirestore)
     implementation(Libs.firebaseStorage)
